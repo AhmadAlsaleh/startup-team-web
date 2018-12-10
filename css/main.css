@@ -916,7 +916,7 @@ ul.external li a:hover {
 ==================================================================*/
 
 #social {
-    background-image: url(../img/slider/banner.jpg);
+    background-image: url(../img/parallax/folow_section_background.jpg);
     padding: 0;
 }
 
@@ -926,18 +926,14 @@ ul.external li a:hover {
 }
 
 .social-button {
-    margin: 0;
-    padding: 0;
     list-style: none;
     text-align: center;
 }
 
 .social-button li {
     display: inline-block;
-}
-
-.social-button li:nth-child(2) {
-    margin: 0 75px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .social-button li a {
@@ -1353,8 +1349,8 @@ textarea.form-control {
     }
 
 /* follow us */
-    .social-button li:nth-child(2) {
-        margin: 0 25px;
+    .social-button li {
+        margin: 10px;
     }
 
     .social-button li a {
@@ -1434,8 +1430,8 @@ textarea.form-control {
     }
 
 /* social */
-    .social-button li:nth-child(2) {
-        margin: 0 50px;
+    .social-button {
+        margin: 10px;
     }
 
     .social-button li a {
