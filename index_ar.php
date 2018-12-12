@@ -1,11 +1,36 @@
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+        $servername = "sql211.epizy.com";
+        $username = "epiz_23107439";
+        $password = "x3IjDxjuz4";
+        $dbname = "epiz_23107439_contact_db";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "INSERT INTO contacts (name, email_mobile, subject, message, status) VALUES ('" . $_POST["name"] . "', '" . $_POST["emailOrMobile"] . "', '" . $_POST["subject"] . "', '" . $_POST["message"] . "', 'new');";
+        
+        if ($conn->query($sql) === TRUE) {
+            
+        } else {
+			echo "Error: " . $conn->error;
+        }
+
+        $conn->close();
+    }    
+?> 
 <!DOCTYPE html>
 	<html lang="en" class="no-js"> 
     <head style="direction: rtl;">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Abjad Tech</title>		
-        <meta name="description" content="Abjad Text Team Ahmad Alsaleh Crazy ITer">
+        <title>Startup Tech</title>		
+        <meta name="description" content="Startup Text Team Ahmad Alsaleh Crazy ITer">
         <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
         <meta name="author" content="Crazy ITer">
 		
@@ -17,7 +42,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Fontawesome Icon font -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- bootstrap.min -->
         <link rel="stylesheet" href="css/jquery.fancybox.css">
 		<!-- bootstrap.min -->
@@ -62,7 +88,7 @@
 					
 					<!-- logo -->
 					<h1 class="navbar-brand">
-						<a href="#body" style="color: #fff;">Abjad Tech</a>
+						<a href="#body" style="color: #fff;">Startup Tech</a>
 					</h1>
 					<!-- /logo -->
                 </div>
@@ -70,15 +96,15 @@
 				<!-- main nav -->
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
                     <ul id="nav" class="nav navbar-nav">
-                        <li><a href="#body">Home</a></li>
-                        <li><a href="#service">Service</a></li>
-                        <li><a href="#portfolio">Gallery</a></li>
-                        <li><a href="#testimonials">Testimonial</a></li>
-                        <li><a href="#team">team</a></li>
-						<li><a href="#contact">Contact</a></li>
+                        <li><a href="#body">الرئيسية</a></li>
+                        <li><a href="#service">الخدمات</a></li>
+                        <li><a href="#portfolio">المعرض</a></li>
+                        <li><a href="#testimonials">اﻵراء</a></li>
+                        <li><a href="#team">الفريق</a></li>
+						<li><a href="#contact">تواصل</a></li>
                         <li></li>
 					</ul>
-					<a href="#body" class="btn btn-blue btn-effect">عربي</a>
+					<a href="./index.php" class="btn btn-blue btn-effect">English</a>
                 </nav>
 				<!-- /main nav -->
 				
@@ -106,9 +132,9 @@
 						<div class="slide-caption">
                             <div class="caption-content">
 								<img src="img/logo.png" class="animated fadeInDown" style="height: 200px; width: 200px;">
-								<h2 class="animated fadeInDown">First Step for New Life</h2>
-                                <span class="animated fadeInDown">Start from #1 to rich infinity</span>
-                                <a href="#about" class="btn btn-blue btn-effect">About Us</a>
+								<h2 class="animated fadeInDown">الخطوة اﻷولى للحياةالجديدة</h2>
+                                <span class="animated fadeInDown">نبدأ من 1# لنصل للانهاية</span>
+                                <a href="#about" class="btn btn-blue btn-effect">عن الفريق</a>
                             </div>
                         </div>
 						
@@ -119,9 +145,9 @@
 						<div class="bg-img bg-img-2"></div>
 						<div class="slide-caption">
                             <div class="caption-content">
-                                <h2>Planning, Designing and Doning</h2>
-                                <span>Analysis Software Systems with IoT Technology</span>
-                                <a href="#portfolio" class="btn btn-blue btn-effect">FEATURED PROJECTS</a>
+                                <h2>التخطيط، التصميم والتنفيذ</h2>
+                                <span>تحليل اﻷنظمة البرمجية مع تطبيقات إنترنت اﻹشياء</span>
+                                <a href="#portfolio" class="btn btn-blue btn-effect">معرض النشاطات</a>
                             </div>
                         </div>
 						
@@ -132,9 +158,9 @@
 						<div class="bg-img bg-img-3"></div>
 						<div class="slide-caption">
                             <div class="caption-content">
-                                <h2>Tranning and Education Technology</h2>
-                                <span>Cources by Wonderful Team and Hope to Join More</span>
-                                <a href="#team" class="btn btn-blue btn-effect">Out Team</a>
+                                <h2>التدريب والتثقيف التكنولوجي</h2>
+                                <span>دورات وجلسات تدريبية مع فريق رائع ونتطلع لانضمام المزيد</span>
+                                <a href="#team" class="btn btn-blue btn-effect">الفريق</a>
                             </div>
                         </div>
 					</div>
@@ -142,8 +168,8 @@
 				</div><!-- /sl-slider -->
 
                 <nav id="nav-arrows" class="nav-arrows">
-                    <span class="nav-arrow-prev">Previous</span>
-                    <span class="nav-arrow-next">Next</span>
+                    <span class="nav-arrow-prev">السابق</span>
+                    <span class="nav-arrow-next">التالي</span>
                 </nav>
 
 				<nav id="nav-dots" class="nav-dots visible-xs visible-sm visible-md visible-lg">
@@ -160,32 +186,50 @@
         ==================================== -->
 			
 			<!-- about section -->
-			<section id="about" >
+			<section id="about">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4 wow animated fadeInLeft">
 							<div class="recent-works">
-								<h3>Vision and Steps</h3>
+								<h3 dir="rtl">الرؤية والخطوات</h3>
 								<div id="works">
-									<div class="work-item">
-										<p>..................<br><br>.............</p>
+									<div class="work-item" dir="rtl">
+										<p>
+												نتطلع إلى زيادة مستوى الثقافة التقنية كخطوة أساسية لمواكبة التسارع العالمي لتطور التكنولوجيا
+												من خلال التركيز على طلاب المدارس الثانوية لتأهيلهم للمشاركة في المسابقات والمبادرات المحلية والدولية
+											<br><br>
+											من وجهة النظر هذه ، سنعمل على محو الأمية في القرن الحادي والعشرين لأن أي شخص غير جيد في التعامل مع أجهزة الكمبيوتر هو شخص جاهل
+										</p>
 									</div>
-									<div class="work-item">
-										<p>..................<br><br>.............</p>
+									<div class="work-item" dir="rtl">
+										<p>
+											يعمل الفريق على زيادة توجه طلاب المنطقة ممن يدرسون في كليات التقنية لدخول سوق العمل بفعالية وبشكل منهجي
+											من خلال تقديم العديد من المساهمات والأنشطة التي من الممكن أن تصل إلى مشروعات حقيقية
+											<br><br>
+											إذا عملنا على هذا النهج ، فسوف نصل إلى عام 2020 مع مجموعة من الشباب لتطوير جوانب مختلفة من الحياة والأكثر أهمية هو جيل متعلم وطموح
+										</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-7 col-md-offset-1 wow animated fadeInRight">
-							<div class="welcome-block">
-								<h3>Abjad Idea</h3>								
+							<div class="welcome-block" dir="rtl">
+								<h3>فكرة Startup Tech</h3>								
 						     	 <div class="message-body">
 									<img src="img/member-1.jpg" class="pull-left" alt="member">
-									   <p style="font-size: 18px;">The Desire to Increase Technology Awareness and Keep up with The Elite in a Distinctive Level of the Region and Making Open Minds.</p>
+									   <p style="font-size: 18px;">
+											الرغبة في زيادة الوعي التكنولوجي ومواكبة النخبة بشكل يليق بتميز المنطقة وتنمية العقول
+									</p>
 									   <br><br>  
-									   <p style="font-size: 18px;">Abjad Tech is The First Step to get more and Serve our Region.
-										<br>We Know its Worth.</p>
-									   <h4>Ahmad Alsaleh,<br>CEO</h4>
+									   <p style="font-size: 18px;">
+										هي الخطوة اﻷولى للرغبة في الحصول على المزيد والمساهمة في تخديم المنطقة
+										<br>
+										ﻷننا نعلم أنها تستحق منا أكثر من ذلك
+									</p>
+									   <h4>أحمد أنس الصالح
+										   <br>
+										   المدير التنفيذي
+									   </h4>
 								  </div>
 						    </div>
 						</div>
@@ -201,8 +245,8 @@
 					<div class="row">
 					
 						<div class="sec-title text-center">
-							<h2 class="wow animated bounceInLeft">Services</h2>
-							<p class="wow animated bounceInRight">The Key Features of our Job</p>
+							<h2 class="wow animated bounceInLeft">الخدمات</h2>
+							<p class="wow animated bounceInRight">الملامح الرئيسية لعملنا</p>
 						</div>
 						
 						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
@@ -210,8 +254,8 @@
 								<div class="service-icon">
 									<i class="fa fa-heart fa-3x"></i>
 								</div>
-								<h3>Support</h3>
-								<p>We Provide many Technical Support Services</p>
+								<h3>الدعم التقني</h3>
+								<p>نقدم العديد من خدمات الدعم التكنولوجي والبرمجي</p>
 							</div>
 						</div>
 					
@@ -220,8 +264,8 @@
 								<div class="service-icon">
 									<i class="fa fa-home fa-3x"></i>
 								</div>
-								<h3>Tranning</h3>
-								<p>We Train Cadres to Contribute to Technical Development</p>
+								<h3>التدريب</h3>
+								<p>نقوم بتدريب الكوادر للمساهمة في التطوير التقني</p>
 							</div>
 						</div>
 					
@@ -230,8 +274,8 @@
 								<div class="service-icon">
 									<i class="fa fa-clock-o fa-3x"></i>
 								</div>
-								<h3>Design UI/UX</h3>
-								<p>We Design Websites and Ads for All Business and Events</p>
+								<h3>خدمات التصميم</h3>
+								<p>نصمم مواقع الانترنت واﻹعلانات لجميع اﻷعمال والمناسبات</p>
 							</div>
 						</div>
 					
@@ -241,8 +285,8 @@
 									<i class="fa fa-tasks fa-3x"></i>
 								</div>
 								
-								<h3>Develop Software</h3>
-								<p>...............................</p>							
+								<h3>تطوير البرمجيات</h3>
+								<p>نطور تطبيقات للهواتف الذكية وتطبيقات خدمات مكتبية</p>							
 							</div>
 						</div>
 						
@@ -257,17 +301,17 @@
 					<div class="row">
 					
 						<div class="sec-title text-center wow animated fadeInDown">
-							<h2>Our Gallery</h2>
+							<h2>معرض النشاطات</h2>
 							<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
 						</div>
 						
 
 						<ul class="project-wrapper wow animated fadeInUp">
 							<li class="portfolio-item">
-								<img src="img/portfolio/item.jpg" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+								<img src="img/portfolio/item.jpg" class="img-responsive">
 								<figcaption class="mask">
-									<h3>000000000000000</h3>
-									<p>0000000000000000000000000000000</p>
+									<h3></h3>
+									<p></p>
 								</figcaption>
 
 							<!--
@@ -279,10 +323,10 @@
 							</li>
 							
 							<li class="portfolio-item">
-								<img src="img/portfolio/item2.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<img src="img/portfolio/item2.jpg" class="img-responsive">
 								<figcaption class="mask">
-									<h3>000000000000000</h3>
-									<p>0000000000000000000000000000000</p>
+									<h3></h3>
+									<p></p>
 								</figcaption>
 								<!--
 								<ul class="external">
@@ -293,56 +337,14 @@
 							</li>
 							
 							<li class="portfolio-item">
-								<img src="img/portfolio/item3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<img src="img/portfolio/item3.jpg" class="img-responsive">
 								<figcaption class="mask">
-									<h3>000000000000000</h3>
-									<p>0000000000000000000000000000000</p>
+									<h3></h3>
+									<p></p>
 								</figcaption>
 								<!--
 								<ul class="external">
 									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="img/portfolio/item3.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							-->
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
-								<figcaption class="mask">
-									<h3>000000000000000</h3>
-									<p>0000000000000000000000000000000</p>
-								</figcaption>
-								<!--
-								<ul class="external">
-									<li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="img/portfolio/item4.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							-->
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item5.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>000000000000000</h3>
-									<p>0000000000000000000000000000000</p>
-								</figcaption>
-								<!--
-								<ul class="external">
-									<li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/portfolio/item5.jpg"><i class="fa fa-search"></i></a></li>
-									<li><a href=""><i class="fa fa-link"></i></a></li>
-								</ul>
-							-->
-							</li>
-							
-							<li class="portfolio-item">
-								<img src="img/portfolio/item6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
-								<figcaption class="mask">
-									<h3>000000000000000</h3>
-									<p>0000000000000000000000000000000</p>
-								</figcaption>
-								<!--
-								<ul class="external">
-									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="img/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
 							-->
@@ -362,40 +364,26 @@
 						<div class="row">
 						
 							<div class="sec-title text-center white wow animated fadeInDown">
-								<h2>What people say</h2>
+								<h2>آراء الشخصيات حول الفريق</h2>
 							</div>
 							
 							<div id="testimonial" class=" wow animated fadeInUp">
 								<div class="testimonial-item text-center">
-									<img src="img/member-1.jpg" alt="Our Clients">
+									<img src="img/member-1.jpg">
 									<div class="clearfix">
-										<span>Ahmad</span>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+										<span>...</span>
+										<p>...</p>
 									</div>
 								</div>
+								
 								<div class="testimonial-item text-center">
-									<img src="img/member-1.jpg" alt="Our Clients">
+									<img src="img/member-1.jpg">
 									<div class="clearfix">
-										<span>Ahmad</span>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+										<span>...</span>
+										<p>...</p>
 									</div>
 								</div>
-								<div class="testimonial-item text-center">
-									<img src="img/member-1.jpg" alt="Our Clients">
-									<div class="clearfix">
-										<span>Ahmad</span>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-									</div>
-								</div>
-								<div class="testimonial-item text-center">
-										<img src="img/member-1.jpg" alt="Our Clients">
-										<div class="clearfix">
-											<span>Ahmad</span>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-										</div>
-									</div>
-							</div>
-						
+							</div>			
 						</div>
 					</div>
 				</div>
@@ -408,14 +396,14 @@
 					<div class="row">
 					
 						<div class="sec-title text-center wow animated fadeInDown">
-							<h2>Our Team</h2>
+							<h2>أعضاء الفريق</h2>
 						</div>
 						
 						<div class="col-sm-6 col-md-3 wow animated fadeInUp card">
 								<img src="./img/member-1.jpg" alt="Ahmad" style="width:100%">
-								<h2>Ahmad Alsaleh</h2>
-								<p class="title">CEO & Founder</p>
-								<p>Software Engineer</p>
+								<h2>أحمد الصالح</h2>
+								<p class="title">المدير التنفيذي والمؤسس</p>
+								<p>مطور تطبيقات</p>
 								<div style="margin: 24px;">
 								  <a href="https://twitter.com/ahmad_alsaleh96" target="_blank"><i class="fa fa-twitter" style="margin: 10px;"></i></a>  
 								  <a href="https://www.linkedin.com/in/ahmad-alsaleh96/" target="_blank"><i class="fa fa-linkedin" style="margin: 10px;"></i></a>  
@@ -424,10 +412,10 @@
 						</div>
 						
 						<div class="col-sm-6 col-md-3 wow animated fadeInUp card" data-wow-delay="0.4s">
-								<img src="./img/member-1.jpg" alt="Ahmad" style="width:100%">
-								<h2>Taha Kassar</h2>
-								<p class="title">CTO & Developer</p>
-								<p>Software Engineer</p>
+								<img src="./img/member-1.jpg" alt="Taha" style="width:100%">
+								<h2>طه كسار</h2>
+								<p class="title">المسؤول التقني ومطور تطبيقات</p>
+								<p>مطور ومدرب برمجي</p>
 								<div style="margin: 24px;">
 								  <a href="#" target="_blank"><i class="fa fa-twitter" style="margin: 10px;"></i></a>  
 								  <a href="#" target="_blank"><i class="fa fa-linkedin" style="margin: 10px;"></i></a>  
@@ -436,10 +424,11 @@
 						</div>
 						
 						<div class="col-sm-6 col-md-3 wow animated fadeInUp card" data-wow-delay="0.8s">
-								<img src="./img/member-1.jpg" alt="Ahmad" style="width:100%">
-								<h2>Ahmad Alsaleh</h2>
-								<p class="title">CEO & Founder</p>
-								<p>Software Engineer</p>
+								<img src="./img/member-3.jpg" alt="Victor" style="width:100%">
+								<h2>فيكتور بدر</h2>
+								<p class="title">مدير الشبكات
+									<br>
+									وأنظمة التشغيل</p>
 								<div style="margin: 24px;">
 								  <a href="#" target="_blank"><i class="fa fa-twitter" style="margin: 10px;"></i></a>  
 								  <a href="#" target="_blank"><i class="fa fa-linkedin" style="margin: 10px;"></i></a>  
@@ -472,8 +461,8 @@
 						<div class="row">
 						
 							<div class="sec-title text-center white wow animated fadeInDown">
-								<h2>FOLLOW US</h2>
-								<p>Our Links on Social Media</p>
+								<h2>تابعنا على مواقع التواصل</h2>
+								<p>روابط صفحاتنا على مواقع التواصل الاجتماعي</p>
 							</div>
 							
 							<ul class="social-button">
@@ -495,38 +484,36 @@
 					<div class="row">
 						
 						<div class="sec-title text-center wow animated fadeInDown">
-							<h2>Contact</h2>
-							<p>Leave a Message</p>
+							<h2>تواصل معنا</h2>
+							<p>اترك رسالة</p>
 						</div>
-						
-						
 						<div class="col-md-7 contact-form wow animated fadeInLeft">
-							<form action="#" method="post">
+							<form action="#" method="post" dir="rtl">
 								<div class="input-field">
-									<input type="text" name="name" class="form-control" placeholder="Your Name...">
+									<input type="text" name="name" class="form-control" placeholder="اسمك..." required>
 								</div>
 								<div class="input-field">
-									<input type="email" name="email" class="form-control" placeholder="Your Email...">
+									<input type="phone" name="emailOrMobile" class="form-control" placeholder="البريد اﻹلكتروني أو الهاتف..." required>
 								</div>
 								<div class="input-field">
-									<input type="text" name="subject" class="form-control" placeholder="Subject...">
+									<input type="text" name="subject" class="form-control" placeholder="العنوان..." required>
 								</div>
 								<div class="input-field">
-									<textarea name="message" class="form-control" placeholder="Messages..."></textarea>
+									<textarea name="message" class="form-control" placeholder="الرسالة..." required></textarea>
 								</div>
-						       	<button type="submit" id="submit" class="btn btn-blue btn-effect">Send</button>
+						       	<button type="submit" id="submit" class="btn btn-blue btn-effect">إرسال</button>
 							</form>
 						</div>
 						
-						<div class="col-md-5 wow animated fadeInRight">
+						<div class="col-md-5 wow animated fadeInRight" dir="rtl">
 							<address class="contact-details">
-								<h3>Contact Us</h3>						
-								<p><i class="fa fa-pencil"></i>Abjad Tech<span>Syria</span> <span>Lattakia, AlHaffeh Cit</span></p><br>
-								<p><i class="fa fa-phone"></i>Phone: +963 41 730843</p>
-								<p><i class="fa fa-envelope"></i>alsaleh.a.ahmad@gmail.com</p>
+								<h3>تواصل معنا</h3>						
+								<p><i class="fa fa-pencil"></i> Startup Tech<span>  سوريا، اللاذقية</span><span>  مدينة الحفة</span></p><br>
+								<p><i class="fa fa-phone"></i>    الهاتف: 843 730 41 963+</p>
+								<p><i class="fa fa-whatsapp"></i> الجوال والواتساب: 087 323 934 963+</p>
+								<p><i class="fa fa-envelope"></i>  alsaleh.a.ahmad@gmail.com</p>
 							</address>
 						</div>
-			
 					</div>
 				</div>
 			</section>
@@ -537,8 +524,8 @@
 			<div class="container">
 				<div class="row text-center">
 					<div class="footer-content">
-						<p>Copyright &copy; 2019 Design and Developed By Crazy ITer</p>
-						<a class="btn btn-blue btn-effect" href="#body">Back to Top</a>
+						<p>حقوق النشر Crazy ITer تصميم وتطوير &copy;</p>
+						<a class="btn btn-blue btn-effect" href="#body">الرجوع ﻷعلى</a>
 					</div>
 				</div>
 			</div>
