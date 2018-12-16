@@ -84,7 +84,7 @@ main > section {
 }
 
 .btn-blue {
-    background-color: rgba(0,158,227, 0.78);
+    background-color: rgba(0, 164, 185, 0.78);
     box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
     padding: 15px 55px;
     color: #fff;
@@ -97,7 +97,7 @@ main > section {
 }
 
 .bg-blue {
-    background-color: #009EE3;
+    background-color: #00a4b9;
 }
 
 /* Sweep To Right */
@@ -138,7 +138,7 @@ main > section {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #fff;
+	background: #ffeb72;
 	
 	-webkit-transform: scaleX(0);
 	   -moz-transform: scaleX(0);
@@ -167,7 +167,7 @@ main > section {
 }
 
 .btn-effect:hover, .btn-effect:focus, .btn-effect:active {
-	color: #009EE3;
+	color: #00a4b9;
 }
 
 .btn-effect:hover:before, .btn-effect:focus:before, .btn-effect:active:before {
@@ -198,7 +198,7 @@ main > section {
 }
 
 .sec-title h2:after {
-    border-bottom: 1px solid #009ee3;
+    border-bottom: 1px solid #00a4b9;
     content: "";
     display: block;
     left: 45%;
@@ -513,14 +513,14 @@ h1.navbar-brand {
 }
 
 .fancybox-next span {
-    background: url("../img/right.png") no-repeat scroll center center #009ee3;
+    background: url("../img/right.png") no-repeat scroll center center #00a4b9;
     height: 50px;
     width: 50px;
     right: 0;
 }
 
 .fancybox-prev span {
-    background: url("../img/left.png") no-repeat scroll center center #009ee3;
+    background: url("../img/left.png") no-repeat scroll center center #00a4b9;
     height: 50px;
     width: 50px;
     left: 0;
@@ -531,7 +531,8 @@ h1.navbar-brand {
 ==================================================================*/
 
 #about {
-    background-color: #009EE3;
+    /*background-color: #00a4b9;*/
+    background-image: linear-gradient(to top right, #00a4b9, #ffeb72);
     color: #fff;
 }
 
@@ -611,9 +612,9 @@ h1.navbar-brand {
 }
 
 .service-item:hover .service-icon {
-    border: 3px solid #009ee3;
+    border: 3px solid #00a4b9;
     margin-bottom: 20px;
-    color: #009ee3;
+    color: #00a4b9;
 }
 
 .service-icon i {
@@ -710,7 +711,7 @@ ul.external li a {
 }
 
 ul.external li a:hover {
-    background-color: #009EE3;
+    background-color: #00a4b9;
     color: #fff;
 }
 
@@ -746,7 +747,8 @@ ul.external li a:hover {
 
 
 #testimonials {
-    background-image: url(../img/parallax/testimonial.jpg);
+    /*background-image: url(../img/parallax/testimonial.jpg);*/
+    background: linear-gradient(to bottom left, #00a4b9, #ffeb72); 
     padding: 0;
     color: #fff;
 }
@@ -756,7 +758,6 @@ ul.external li a:hover {
 }
 
 #testimonials .overlay {
-    background-color: rgba(15,155,224, 0.78);
     padding: 70px 0 40px;
 }
 
@@ -853,7 +854,7 @@ ul.external li a:hover {
 }
 
 .price-table.featured .value {
-    background-color: #009EE3;
+    background-color: #00a4b9;
     color: #fff;
 }
 
@@ -902,7 +903,7 @@ ul.external li a:hover {
 
 .price-table.featured ul li:last-child,
 .price-table ul li:last-child:hover {
-    background-color: #009EE3;
+    background-color: #00a4b9;
 }
 
 .price-table.featured ul li:last-child a,
@@ -953,8 +954,8 @@ ul.external li a:hover {
 }
 
 .social-button li a:hover {
-    color: #008ECC;
-    border: 2px solid #008ECC;
+    color: #ffeb72;
+    border: 2px solid #ffeb72;
 }
 
 
@@ -980,6 +981,7 @@ textarea.form-control {
     height: 165px;
 }
 
+/*
 #submit:hover {
   color: #fff;
 }
@@ -991,6 +993,7 @@ textarea.form-control {
 #submit.btn-effect:after {
   background: #2E2E2E;
 }
+*/
 
 .contact-details h3 {
     border-bottom: 1px solid #008ecc;
@@ -1050,6 +1053,11 @@ textarea.form-control {
 .footer-content > div > p:first-child {
     margin-bottom: 15px;
     text-transform: uppercase;
+}
+
+#copyText {
+    color: #fff;
+    font-size: 14px;
 }
 
 .subscribe-form {
@@ -1135,7 +1143,7 @@ textarea.form-control {
 }
 
 .footer-social ul li a:hover {
-    color: #009EE3;
+    color: #00a4b9;
 }
 
 .footer-content > p {

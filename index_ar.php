@@ -33,8 +33,8 @@
         <meta name="description" content="Startup Text Team Ahmad Alsaleh Crazy ITer">
         <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
         <meta name="author" content="Crazy ITer">
-		
         <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="./img/logo.png">
 		
 		<!-- CSS
 		================================================== -->
@@ -167,7 +167,7 @@
 
 				</div><!-- /sl-slider -->
 
-                <nav id="nav-arrows" class="nav-arrows">
+				<nav id="nav-arrows" class="nav-arrows">
                     <span class="nav-arrow-prev">السابق</span>
                     <span class="nav-arrow-next">التالي</span>
                 </nav>
@@ -412,13 +412,13 @@
 						</div>
 						
 						<div class="col-sm-6 col-md-3 wow animated fadeInUp card" data-wow-delay="0.4s">
-								<img src="./img/member-1.jpg" alt="Taha" style="width:100%">
+								<img src="./img/member-2.jpg" alt="Taha" style="width:100%">
 								<h2>طه كسار</h2>
 								<p class="title">المسؤول التقني ومطور تطبيقات</p>
 								<p>مطور ومدرب برمجي</p>
 								<div style="margin: 24px;">
-								  <a href="#" target="_blank"><i class="fa fa-twitter" style="margin: 10px;"></i></a>  
-								  <a href="#" target="_blank"><i class="fa fa-linkedin" style="margin: 10px;"></i></a>  
+								  <a href="https://twitter.com/KassarTaha" target="_blank"><i class="fa fa-twitter" style="margin: 10px;"></i></a>  
+								  <a href="https://www.linkedin.com/in/taha-kassar-508225177" target="_blank"><i class="fa fa-linkedin" style="margin: 10px;"></i></a>  
 								  <a href="https://www.facebook.com/taha.kassar.12" target="_blank"><i class="fa fa-facebook" style="margin: 10px;"></i></a> 
 								</div>
 						</div>
@@ -524,7 +524,7 @@
 			<div class="container">
 				<div class="row text-center">
 					<div class="footer-content">
-						<p>حقوق النشر Crazy ITer تصميم وتطوير &copy;</p>
+						<a id="copyText" href="https://www.facebook.com/Crazy.ITer/" target="_blank">حقوق النشر Crazy ITer تصميم وتطوير &copy;</a>
 						<a class="btn btn-blue btn-effect" href="#body">الرجوع ﻷعلى</a>
 					</div>
 				</div>
