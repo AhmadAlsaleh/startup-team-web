@@ -59,6 +59,22 @@
 
 		<!-- Modernizer Script for old Browsers -->
         <script src="js/modernizr-2.6.2.min.js"></script>
+		
+		<!-- ManyChat -->
+		<script async="async">
+		window.mcwidget = {"appId":"532160876956612","pageId":"297831607507540","widgets":[{"widget_id":4205492,"page_id":"297831607507540","widget_type":"customer_chat","status":"active","name":"Growth Tool #14","data":[],"chat_ref":"w4205492"}],"widgetLocale":"en_US","defaultSize":0,"fbSDKVersion":"v3.1"};
+	(function(d, s, id){
+    var host = 'manychat.com/108807';
+
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = '//' + host + '/assets/js/widget.js?' + (Math.round(+new Date/1000/600));
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'mcwidget-core'));
+
+		</script>
+
     </head>
 	
     <body id="body">
@@ -98,7 +114,7 @@
                     <ul id="nav" class="nav navbar-nav">
                         <li><a href="#body">الرئيسية</a></li>
                         <li><a href="#service">الخدمات</a></li>
-                        <li><a href="#portfolio">المعرض</a></li>
+                        <li><a href="#portfolio">اﻷحداث والنشاطات</a></li>
                         <li><a href="#testimonials">اﻵراء</a></li>
                         <li><a href="#team">الفريق</a></li>
 						<li><a href="#contact">تواصل</a></li>
@@ -146,8 +162,8 @@
 						<div class="slide-caption">
                             <div class="caption-content">
                                 <h2>التخطيط، التصميم والتنفيذ</h2>
-                                <span>تحليل اﻷنظمة البرمجية مع تطبيقات إنترنت اﻹشياء</span>
-                                <a href="#portfolio" class="btn btn-blue btn-effect">معرض النشاطات</a>
+                                <span>تحليل اﻷنظمة البرمجية مع العديد من اﻷحداث</span>
+                                <a href="#portfolio" class="btn btn-blue btn-effect">اﻷحداث والنشاطات</a>
                             </div>
                         </div>
 						
@@ -301,7 +317,7 @@
 					<div class="row">
 					
 						<div class="sec-title text-center wow animated fadeInDown">
-							<h2>معرض النشاطات</h2>
+							<h2>اﻷحداث والنشاطات</h2>
 							<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
 						</div>
 						
@@ -313,13 +329,10 @@
 									<h3></h3>
 									<p></p>
 								</figcaption>
-
-							<!--
 								<ul class="external">
 									<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
-							-->
 							</li>
 							
 							<li class="portfolio-item">
@@ -328,12 +341,10 @@
 									<h3></h3>
 									<p></p>
 								</figcaption>
-								<!--
 								<ul class="external">
 									<li><a class="fancybox" title="Wall street" href="img/slider/banner.jpg" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
-							-->
 							</li>
 							
 							<li class="portfolio-item">
@@ -342,12 +353,10 @@
 									<h3></h3>
 									<p></p>
 								</figcaption>
-								<!--
 								<ul class="external">
 									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="img/portfolio/item3.jpg"><i class="fa fa-search"></i></a></li>
 									<li><a href=""><i class="fa fa-link"></i></a></li>
 								</ul>
-							-->
 							</li>
 						</ul>
 						
@@ -466,10 +475,26 @@
 							</div>
 							
 							<ul class="social-button">
-								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.9s"><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+								<li class="wow animated zoomIn">
+									<a href="https://www.facebook.com/startup.tech.team/" target="_blank">
+									<i class="fa fa-facebook fa-2x"></i>
+									</a>
+								</li>
+								<li class="wow animated zoomIn" data-wow-delay="0.3s">
+									<a href="https://twitter.com/startupTechTeam" target="_blank">
+									<i class="fa fa-twitter fa-2x"></i>
+									</a>
+								</li>
+								<li class="wow animated zoomIn" data-wow-delay="0.6s">
+									<a href="https://www.instagram.com/startuptech.team/" target="_blank">
+									<i class="fa fa-instagram fa-2x"></i>
+									</a>
+								</li>
+								<li class="wow animated zoomIn" data-wow-delay="0.9s">
+									<a href="https://www.youtube.com/channel/UCYon0UtXQi9SUdpzHIj5sQQ" target="_blank">
+									<i class="fa fa-youtube fa-2x"></i>
+									</a>
+								</li>
 							</ul>
 							
 						</div>
@@ -507,12 +532,23 @@
 						
 						<div class="col-md-5 wow animated fadeInRight" dir="rtl">
 							<address class="contact-details">
-								<h3>تواصل معنا</h3>						
+								<h3>صفحتنا على الفيسبوك</h3>						
+								<!--
 								<p><i class="fa fa-pencil"></i> Startup Tech<span>  سوريا، اللاذقية</span><span>  مدينة الحفة</span></p><br>
 								<p><i class="fa fa-phone"></i>    الهاتف: 843 730 41 963+</p>
 								<p><i class="fa fa-whatsapp"></i> الجوال والواتساب: 087 323 934 963+</p>
 								<p><i class="fa fa-envelope"></i>  alsaleh.a.ahmad@gmail.com</p>
+								-->
 							</address>
+							<iframe 
+								src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstartuptech.team&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=355250141692256" 
+								width="100%"
+								height="350"
+								style="border:none;overflow:hidden" 
+								scrolling="no" 
+								frameborder="0" 
+								allowTransparency="true" 
+								allow="encrypted-media"></iframe>
 						</div>
 					</div>
 				</div>
@@ -525,6 +561,7 @@
 				<div class="row text-center">
 					<div class="footer-content">
 						<a id="copyText" href="https://www.facebook.com/Crazy.ITer/" target="_blank">حقوق النشر Crazy ITer تصميم وتطوير &copy;</a>
+						<br>
 						<a class="btn btn-blue btn-effect" href="#body">الرجوع ﻷعلى</a>
 					</div>
 				</div>
